@@ -24,7 +24,7 @@ With that said, it should work out of the box on a Mac and possibly in windows u
 2. Run the command `docker-compose up airflow-init`
 3. After initialization, Airflow can be started using the command `docker-compose up`.
 4. The gui-interface can then be accessed by a browser through `localhost:8080`.
-5. Default login credentials are user: `airflow` with the password: `airflow`.
+5. Default login credentials are **user**: `airflow` with the **password**: `airflow`.
 6. The dag `gbg_air_quality_request_to_disc` can then be activated and will start back-filling data.
 
 <hr>
