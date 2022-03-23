@@ -13,6 +13,9 @@ If Airflow is left running the dag is scheduled to trigger midst night according
 
 Please note that this Airflow setup is only suitable for local testing and orchestation of non-critical pipelines and **should not** be used for production when the availability of pipeline results are of critical importance.
 
+The repository has been developed in a Linux environment.
+With that said, it should work out of the box on a Mac and possibly in windows using WSL2.
+
 <hr>
 
 ## Setup
