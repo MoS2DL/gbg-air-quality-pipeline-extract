@@ -3,7 +3,7 @@
 This repository contains a simple example of the extraction step in an ELT/ETL pipeline using the workflow manager [Apache Airflow](https://airflow.apache.org/).
 
 The data extracted is from an API (see Links below) giving access to data related to air quality measurements in Gothenburg, Sweden, and is provided by Gothenburg Municipality for public use.
-The data is accessible on an hourly basis from four fixed stations/locations (Femman, Lejonet, Haga Norra and Haga Södra) as well as three mobile stations.
+The data is accessible by date, with hourly resolution for that date, from four fixed stations/locations (Femman, Lejonet, Haga Norra and Haga Södra) as well as three mobile stations.
 Note that all stations do not provide the same set of measurements.
 The earliest date currently accessible using the API is 2021-01-01.
 Data before this date can be accessed as an csv-file, available through the links below.
