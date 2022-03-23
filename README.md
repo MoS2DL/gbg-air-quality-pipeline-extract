@@ -11,14 +11,18 @@ Data before this date can be accessed as an csv-file, available through the link
 Upon succesfull execution the Airflow instance will back-fill data from 2021-01-01 up until the day before the execution date into the `data/raw` directory structure.
 If Airflow is left running the dag is scheduled to trigger midst night according to the cron-interval `0 3 * * *`, and will automatically back-fill the previous day.
 
+<hr>
+
 ## Setup
 
 1. Run the bootstrap script `bootstrap-airflow.sh` to create necessary directories and environment file with en environmental variable setting an Airflow user ID.
 2. Run the command `docker-compose up airflow-init`
+3. After initialization, Airflow can be started using the command `docker-compose up`.
+4. The gui-interface can then be accessed by a browser through `localhost:8080`.
+5. Default login credentials are user: `airflow` with the password: `airflow`.
+6. The dag `gbg_air_quality_request_to_disc` can then be activated and will start back-filling data.
 
-After initialization Airflow can be started using the command `docker-compose up`.
-The gui-interface can be accessed through `localhost:8080` and a default user has been set to `airflow` with the default password `airflow`.
-The dag `gbg_air_quality_request_to_disc` can then be activated and will start the back-fill.
+<hr>
 
 ## Links
 [Gothenburg Open Data (In Swedish)](https://goteborg.se/wps/portal/start/kommun-o-politik/kommunfakta/oppna-data)
