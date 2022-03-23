@@ -1,6 +1,5 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.macros import ds_add
 
 from utils.request_gbg_air import query_and_save_results_to_disc
 
