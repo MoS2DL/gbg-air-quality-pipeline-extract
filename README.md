@@ -11,6 +11,8 @@ Data before this date can be accessed as an csv-file, available through the link
 Upon succesfull execution the Airflow instance will back-fill data from 2021-01-01 up until the day before the execution date into the `data/raw` directory structure.
 If Airflow is left running the dag is scheduled to trigger midst night according to the cron-interval `0 3 * * *`, and will automatically back-fill the previous day.
 
+Please note that this Airflow setup is only suitable for local testing and orchestation of non-critical pipelines and **should not** be used for production when the availability of pipeline results are of critical importance.
+
 <hr>
 
 ## Setup
