@@ -8,11 +8,13 @@ from typing import List, Dict
 def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None:
     """Query API and write response data to disc
 
-    Creates a date-structured directory tree and saves response into JSON-file split by the hour
+    Creates a date-structured directory tree and saves response 
+    into JSON-file split by the hour
 
     The raw data points in the responses are written to disc, with the exeptions:
     1. Each data point in the responses are cleaned from padded white-spaces.
-    2. The UTC-timestamp, at time of saving to disc, is included to each record for traceability.
+    2. The UTC-timestamp, at time of saving to disc, is included to each record
+       for traceability.
 
     Parameters
     ----------
