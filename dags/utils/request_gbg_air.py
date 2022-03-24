@@ -2,13 +2,12 @@ import datetime as dt
 import json
 from pathlib import Path
 import requests
-from typing import List, Dict
 
 
 def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None:
     """Query API and write response data to disc
 
-    Creates a date-structured directory tree and saves response 
+    Creates a date-structured directory tree and saves response
     into JSON-file split by the hour
 
     The raw data points in the responses are written to disc, with the exeptions:
