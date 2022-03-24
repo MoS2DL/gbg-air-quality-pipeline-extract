@@ -1,9 +1,8 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-from utils.request_gbg_air import query_and_save_results_to_disc
-
 from utils.constants import START_DATE, URL, DATA_ROOT_PATH, default_args
+from utils.request_gbg_air import query_and_save_results_to_disc
 
 
 with DAG(
