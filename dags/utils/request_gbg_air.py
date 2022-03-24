@@ -45,6 +45,7 @@ def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None
             key: value.strip() for key, value in result.items()
         }  # Remove padding white-spaces
         result["time_saved"] = save_time  # Add UTC-timestamp to the data
+        result["data_origin"] = "gbg-air-quality-api"
         file_path = data_path / f"{n}.json"  # Enumerate digit defines file-name
         with open(file_path, "w") as json_file:
             json.dump(result, json_file)
