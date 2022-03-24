@@ -33,7 +33,6 @@ def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None
     ]  # Remove leading zeros using lstrip
     data_path = data_root / year / month / day
     data_path.mkdir(parents=True, exist_ok=True)
-    print(f"data_path exists: {data_path.is_dir()}")
 
     save_time = f"{dt.datetime.now()}"
     for n, result in enumerate(results):
