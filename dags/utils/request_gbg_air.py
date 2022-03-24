@@ -21,14 +21,15 @@ def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None
       The requested date for the data using the form "YYYY-MM-DD".
     url : str
       URL to the Gothenburg Open Data endpoint.
-
+    data_root : Path
+      Python Path object containing the path to where the files will be saved
     """
     # GET request to the API endpoint
     response = requests.get(url, params={"date": date})
     assert response.status_code == 200
     # Extract the results from the response
     results = response.json()["results"]
-    assert len(results) > 0
+    assert len(results) > 0 and len(results) <= 24
 
     # Split date string to be used in directory structure
     year, month, day = [
