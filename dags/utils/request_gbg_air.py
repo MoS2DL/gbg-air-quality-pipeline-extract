@@ -23,6 +23,7 @@ def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None
       URL to the Gothenburg Open Data endpoint.
     data_root : Path
       Python Path object containing the path to where the files will be saved
+
     """
     # GET request to the API endpoint
     response = requests.get(url, params={"date": date})
