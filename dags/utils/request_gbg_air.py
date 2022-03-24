@@ -24,9 +24,11 @@ def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None
 
     """
     # GET request to the API endpoint
-    response_dict = requests.get(url, params={"date": date}).json()
+    response = requests.get(url, params={"date": date})
+    assert response.status_code == 200
     # Extract the results from the response
-    results = response_dict["results"]
+    results = response.json()["results"]
+    assert len(results) > 0
 
     # Split date string to be used in directory structure
     year, month, day = [
