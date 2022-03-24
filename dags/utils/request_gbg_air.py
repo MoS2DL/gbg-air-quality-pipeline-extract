@@ -1,8 +1,8 @@
+import datetime as dt
+import json
 from pathlib import Path
 import requests
 from typing import List, Dict
-import json
-import datetime as dt
 
 
 def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None:
