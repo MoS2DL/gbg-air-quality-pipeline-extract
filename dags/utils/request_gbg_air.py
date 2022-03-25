@@ -40,13 +40,16 @@ def query_and_save_results_to_disc(date: str, url: str, data_root: Path) -> None
     data_path.mkdir(parents=True, exist_ok=True)
 
     save_time = f"{dt.datetime.now()}"
+    n_values = 0
     for n, result in enumerate(results):
         result = {
             key: value.strip()
             for key, value in sorted(result.items(), key=lambda x: x[0])
         }  # Sort by the keys and remove padding white-spaces
+        n_values += len(result)
         result["time_saved"] = save_time  # Add UTC-timestamp to the data
         result["data_origin"] = "gbg-air-quality-api"
         file_path = data_path / f"{n}.json"  # Enumerate digit defines file-name
         with open(file_path, "w") as json_file:
             json.dump(result, json_file)
+    print(f"#records: {n+1}, #values: {n_values}")
